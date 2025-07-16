@@ -1,0 +1,43 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<html>
+<head>
+    <title >FitStore - Home</title>
+    <link rel="stylesheet" href="css/Hero.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+        <img src="images/dum.png" alt="logo" style="height: 28px;">
+        <span>FitStore</span>
+    </div>
+        <nav>
+           <a href="/">Home</a>
+        
+        <a href="about">About</a>
+        <a href="login" class="learn-btn">Sign In</a>
+        <a href="register" class="learn-btn">Sign Up</a>
+         <a href="viewpro" class="learn-btn">Sign Up</a>
+      
+        </nav>
+    </header>
+
+    <section class="hero">
+    
+        <div class="hero-text">
+        
+            <h1><span class="highlight">Push Limits</span><br>Transform Your Body</h1>
+            <p>With expert-guided programs, FitStore helps you achieve your fitness goals faster, better, and stronger.</p>
+            <div class="buttons">
+                <a href="login" class="btn primary">Get Started</a>
+                <a href="contact" class="btn secondary">Contact Us</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="images/fitness-hero.jpg" alt="Fitness Hero Image" />
+        </div>
+    </section>
+    <footer>
+    &copy; 2025 FitStore. All rights reserved.
+</footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+package com.example.FIT_STORE.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.FIT_STORE.model.Admin;
+import com.example.FIT_STORE.model.UserReg;
+
+public interface AdminRepo extends JpaRepository<Admin, Integer> {
+	Admin findByEmailAndPassword(String email,String password);
+
+}

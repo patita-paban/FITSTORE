@@ -1,0 +1,51 @@
+package com.example.FIT_STORE.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.FIT_STORE.dao.WorkoutRepo;
+import com.example.FIT_STORE.model.Nutrition;
+import com.example.FIT_STORE.model.workout;
+
+@Controller
+public class WorkoutController {
+	@Autowired
+	WorkoutRepo wrepo;
+	@RequestMapping("/addworkout")
+	public String addworkout(@RequestParam("date")String date,@RequestParam("type")String type,
+			@RequestParam("duration")String duration,ModelMap model) 
+	{
+		workout work = new workout();
+		
+		work.setDate(date);
+		work.setType(type);
+		work.setduration(Integer.parseInt(duration));
+		wrepo.save(work);
+		model.put("msg","Workout Added Sucessfully!");
+		return "workouts";
+	}
+	@RequestMapping("/viewworkout")
+	public String getWorkout(Model model) {
+		List<workout> work = wrepo.findAll();	
+		model.addAttribute("item",work);
+		return "workouts";
+	}
+	@GetMapping("/deleteWork")
+	public String deleteClient(ModelMap model,@RequestParam int id) {
+	    workout wt = wrepo.findById(id);
+
+	    if (wt != null) {
+	        wrepo.delete(wt);
+	        model.put("msg","Nutrition deleted!");
+	    }
+
+	    return "workouts";
+	}
+}

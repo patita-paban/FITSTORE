@@ -1,0 +1,36 @@
+<footer class="footer bg-dark text-white mt-5 pt-4 pb-3">
+    <div class="container">
+        <div class="row">
+
+            <!-- Brand Info -->
+            <div class="col-md-4 mb-3">
+                <h5 class="text-uppercase">FitStore</h5>
+                <p>Your fitness journey starts here. Track workouts, monitor nutrition, and stay healthy.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-3">
+                <h6>Quick Links</h6>
+                <ul class="list-unstyled">
+                    <li class="nav-item"><a class="nav-link" href="dash">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href=" viewworkout">Workouts</a></li>
+                <li class="nav-item"><a class="nav-link" href="viewNut">Nutrition</a></li>
+                <li class="nav-item"><a class="nav-link" href="bmi">BMI</a></li>
+                <li class="nav-item"><a class="nav-link" href="profile">Profile</a></li>
+                 <li class="nav-item"><a class="nav-link" href="exercise">Exercises</a></li>
+                <li class="nav-item"><a class="nav-link" href="login">Logout</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-md-4 mb-3">
+                <h6>Contact Us</h6>
+                <p>Email: support@fitstore.com<br>Phone: +1 123 456 7890</p>
+            </div>
+
+        </div>
+
+        <hr class="bg-light">
+        <p class="text-center small">&copy; 2025 FitStore. All rights reserved.</p>
+    </div>
+</footer>

@@ -1,0 +1,10 @@
+package com.example.FIT_STORE.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.FIT_STORE.model.UserReg;
+
+public interface UserRepo extends JpaRepository<UserReg, Integer> {
+	UserReg findByEmailAndPassword(String email,String password);
+	UserReg findByAge(int age);
+}

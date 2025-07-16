@@ -1,0 +1,9 @@
+package com.example.FIT_STORE.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.FIT_STORE.model.Admin;
+
+public interface AdminRepo extends JpaRepository<Admin, Integer> {
+
+}

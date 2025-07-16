@@ -1,0 +1,166 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise Library</title>
+    <link rel="stylesheet" href="css/exe.css">
+    
+</head>
+<body>
+<jsp:include page="header.jsp" />
+<div class="container">
+    <h1>Exercise Library</h1>
+
+    <div class="categories">
+        <div class="category"><a href="exercise">All</a></div>
+        <div class="category"><a href="chest">Chest</a></div>
+        <div class="category"><a href="back">Back</a></div>
+        <div class="category"><a href="legs">Legs</a></div>
+        <div class="category"><a href="shoulder">Shoulders</a></div>
+        <div class="category"><a href="arms">Arms</a></div>
+        <div class="category"><a href="core">Core</a></div>
+        <div class="category"><a href="cardio">Cardio</a></div>
+    </div>
+
+    <!-- Static Example Exercises -->
+    <div class="exercise-card">
+        <div class="exercise-header" onclick="toggleDetails(this)">
+            <div class="exercise-title">Barbell Bench Press <span class="label"> - Chest | Intermediate</span></div>
+            <div class="dropdown-icon">&#9660;</div>
+        </div>
+        <div class="exercise-details">
+            <strong>Instructions:</strong>
+            <ul>
+                <li>Lie on the bench with feet flat on the ground.</li>
+                <li>Grip the barbell slightly wider than shoulder-width apart.</li>
+                <li>Lower the bar to your mid-chest.</li>
+                <li>Press the bar back to the starting position.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-header" onclick="toggleDetails(this)">
+            <div class="exercise-title">Pull Ups <span class="label"> - Back | Intermediate</span></div>
+            <div class="dropdown-icon">&#9660;</div>
+        </div>
+        <div class="exercise-details">
+            <strong>Instructions:</strong>
+            <ul>
+                <li>Grab the pull-up bar with hands slightly wider than shoulder-width.</li>
+                <li>Hang with arms fully extended and shoulders relaxed.</li>
+                <li>Pull yourself up until your chin is over the bar.</li>
+                <li>Lower yourself back down with control.</li>
+                <li>Repeat for the desired number of repetitions.</li>
+            </ul>
+            <strong>Tips:</strong>
+            <ul>
+                <li>Focus on pulling with your back muscles, not your arms.</li>
+                <li>Don't swing or use momentum to get up.</li>
+                <li>For beginners, use an assisted pull-up machine or resistance bands.</li>
+            </ul>
+        </div>
+    </div>
+
+    
+    
+    <div class="exercise-card">
+        <div class="exercise-header" onclick="toggleDetails(this)">
+            <div class="exercise-title">Jump Squat <span class="label"> - Legs, Glutes | Intermediate</span></div>
+            <div class="dropdown-icon">&#9660;</div>
+        </div>
+        <div class="exercise-details">
+            <strong>Instructions:</strong>
+            <ul>
+                <li>Stand with feet hip-width apart, arms by your sides.</li>
+                <li>Lower into a squat, keeping your back straight and chest up.</li>
+                <li>Drive through your feet and jump up explosively.</li>
+                <li>Land softly and immediately lower back into a squat to repeat.</li>
+            </ul>
+        </div>
+    </div>
+    
+      <div class="exercise-card">
+        <div class="exercise-header" onclick="toggleDetails(this)">
+            <div class="exercise-title">Side Plank <span class="label"> -Shoulders, Core | Beginner–Intermediate</span></div>
+            <div class="dropdown-icon">&#9660;</div>
+        </div>
+        <div class="exercise-details">
+            <strong>Instructions:</strong>
+            <ul>
+                <li>Lie on your side with legs straight and stacked, elbow under your shoulder.</li>
+                <li>Lift your hips off the ground, forming a straight line from head to heels.</li>
+                <li>Hold the position, keeping your core tight.</li>
+                <li>Switch sides after holding for 20–60 seconds</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="exercise-card">
+        <div class="exercise-header" onclick="toggleDetails(this)">
+            <div class="exercise-title">Zottman Curl  <span class="label"> - Arms (Biceps, Forearms) | Intermediate</span></div>
+            <div class="dropdown-icon">&#9660;</div>
+        </div>
+        <div class="exercise-details">
+            <strong>Instructions:</strong>
+            <ul>
+                <li>Stand with a dumbbell in each hand, arms at your sides, palms facing forward.</li>
+                <li>Curl the dumbbells toward your shoulders.</li>
+                <li>Rotate your wrists at the top so palms face down, then lower the weights slowly.</li>
+                <li>Rotate wrists back to start position for the next rep.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="exercise-card">
+        <div class="exercise-header" onclick="toggleDetails(this)">
+            <div class="exercise-title">Triceps Dip  <span class="label"> -  Arms (Triceps) | Beginner–Intermediate</span></div>
+            <div class="dropdown-icon">&#9660;</div>
+        </div>
+        <div class="exercise-details">
+            <strong>Instructions:</strong>
+            <ul>
+                <li>Sit on the edge of a bench or chair, hands gripping the edge beside your hips.</li>
+                <li>Slide your hips off the bench and extend your legs.</li>
+                <li>Lower your body by bending your elbows to about 90 degrees, keeping elbows close.</li>
+                <li>Press through your palms to return to starting position.</li>
+            
+            </ul>
+          
+        </div>
+    </div>
+    
+     <div class="exercise-card">
+        <div class="exercise-header" onclick="toggleDetails(this)">
+            <div class="exercise-title">Plank Up-and-Down (Up-Down Plank)   <span class="label"> -  Core, Shoulders, Arms | Intermediate</span></div>
+            <div class="dropdown-icon">&#9660;</div>
+        </div>
+        <div class="exercise-details">
+            <strong>Instructions:</strong>
+            <ul>
+                <li>Start in a high plank position with hands under shoulders, body in a straight line.</li>
+                <li>Lower one elbow to the mat, then the other, so you’re in a forearm plank.</li>
+                <li>Push back up, one arm at a time, to return to high plank.</li>
+                <li>Keep core engaged and avoid swinging your hips.</li>
+            </ul>
+        </div>
+    </div>
+    
+    
+
+</div>
+
+<script>
+    function toggleDetails(element) {
+        const icon = element.querySelector('.dropdown-icon');
+        const details = element.nextElementSibling;
+        icon.classList.toggle('rotate');
+        details.classList.toggle('show');
+    }
+</script>
+<footer>
+    &copy; 2025 FitStore. All rights reserved.
+</footer>
+</body>
+</html>

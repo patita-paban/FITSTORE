@@ -1,0 +1,111 @@
+package com.example.FIT_STORE.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.FIT_STORE.dao.AdminRepo;
+import com.example.FIT_STORE.dao.UserRepo;
+import com.example.FIT_STORE.model.Admin;
+import com.example.FIT_STORE.model.UserReg;
+
+import jakarta.servlet.http.HttpSession;
+
+@Controller
+public class AdminController {
+	@Autowired
+	AdminRepo ar;
+	
+	
+
+	
+
+	@RequestMapping("/dash")
+	public String dashboard() {
+		return "dashboard";
+	} 
+	@RequestMapping("/workout")
+	public String workout() {
+		return "workouts";
+	} 
+	@RequestMapping("/nut")
+	public String nutrition() {
+		return "nutrition";
+	} 
+	@RequestMapping("/profile")
+	public String profile() {
+		return "profile";
+	} 
+	@RequestMapping("/foot")
+	public String footer() {
+		return "footer";
+	} 
+	@RequestMapping("/head")
+	public String header() {
+		return "header";
+	} 
+	@RequestMapping("/exercise")
+	public String exercise() {
+		return "excercise";
+	} 
+	@RequestMapping("/")
+	public String hero() {
+		return "Herp";
+	} 
+	@RequestMapping("/about")
+	public String about() {
+		return "about";
+	} 
+	@RequestMapping("/contact")
+	public String contact() {
+		return "contact";
+	} 
+	@RequestMapping("/bmi")
+	public String bmi() {
+		return "bmi";
+	} 
+	@RequestMapping("/goals")
+	public String goals() {
+		return "goals";
+	} 
+	@RequestMapping("/playlist")
+	public String playlist() {
+		return "playlist";
+	} 
+	@RequestMapping("/features")
+	public String features() {
+		return "features";
+	} 
+	@RequestMapping("/stopwatch")
+	public String stopwatch() {
+		return "stopwatch";
+	} 
+	@RequestMapping("/journal")
+	public String journal() {
+		return "journal";
+	} 
+	@RequestMapping("/admin")
+	public String admin() {
+		return "adminm";
+	} 
+	
+	@PostMapping("/logAdmin")
+	public String login(@RequestParam("uemail")String email, @RequestParam("upass")String pass,ModelMap model,HttpSession session)
+	{
+		Admin user=ar.findByEmailAndPassword(email, pass);
+		if(user!=null)
+		{
+			session.setAttribute("data", email);
+			return "adminm";
+			
+					
+		}
+		else {
+			model.put("msg", "Wrong Credential!");
+			return "login2";
+		}
+	}
+}

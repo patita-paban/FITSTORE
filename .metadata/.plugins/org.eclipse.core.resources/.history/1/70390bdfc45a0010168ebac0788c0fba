@@ -1,0 +1,228 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FitSore Dashboard</title>
+        <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e0f2f1);
+        }
+
+        header {
+            background-color: #16333f;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            color: #38fcb4;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 17px;
+        }
+
+        .logout-btn {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #222;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #1b1b1b;
+        }
+
+        .card p {
+            font-size: 15px;
+            color: #555;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #2ec4b6;
+        }
+
+        footer {
+            background-color: #16333f;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
+
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<jsp:include page="header.jsp" />
+<div class="container mt-4">
+    <h2 class="mb-4">Welcome to FitStore ${name}!</h2>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card text-white bg-primary h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Steps</h5>
+                    <p class="card-text fs-3">10,542</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-success h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Calories Burned</h5>
+                    <p class="card-text fs-3">1,240 kcal</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-white bg-danger h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Heart Rate</h5>
+                    <p class="card-text fs-3">76 bpm</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-12">
+            <h4>Weekly Activity</h4>
+            <canvas id="activityChart"></canvas>
+        </div>
+    </div>
+</div>
+<div class="container">
+        <h1>🚀 FitStore Features</h1>
+        <div class="card-grid">
+
+            <!-- Each card is an anchor to a page -->
+            <a href="goals" class="card">
+                <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                <h2>Fitness Goals</h2>
+                <p>Set, track and achieve your personal fitness goals.</p>
+            </a>
+
+            <a href="playlist" class="card">
+                <div class="card-icon"><i class="fas fa-music"></i></div>
+                <h2>Motivational Playlist</h2>
+                <p>Get pumped up with curated workout playlists.</p>
+            </a>
+
+            <a href="stopwatch" class="card">
+                <div class="card-icon"><i class="fas fa-stopwatch"></i></div>
+                <h2>Stopwatch</h2>
+                <p>Track time for HIIT, cardio, and circuits.</p>
+            </a>
+
+            <a href="journal.jsp" class="card">
+                <div class="card-icon"><i class="fas fa-book-open"></i></div>
+                <h2>Workout Journal</h2>
+                <p>Log and reflect on your daily workout sessions.</p>
+            </a>
+
+            <a href="progress.jsp" class="card">
+                <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                <h2>Progress Tracker</h2>
+                <p>View visual insights of your fitness journey.</p>
+            </a>
+
+            <a href="nutrition-plan.jsp" class="card">
+                <div class="card-icon"><i class="fas fa-apple-alt"></i></div>
+                <h2>Nutrition Plan</h2>
+                <p>Track meals and create a balanced diet plan.</p>
+            </a>
+
+        </div>
+    </div>
+<script>
+    const ctx = document.getElementById('activityChart').getContext('2d');
+    const activityChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            datasets: [{
+                label: 'Calories',
+                data: [8500, 9200, 4000, 7500, 10400, 9800, 12000],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.3
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
+<jsp:include page="footer.jsp" />
+  

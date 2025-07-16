@@ -1,0 +1,60 @@
+package com.example.FIT_STORE.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.FIT_STORE.dao.NutritionRepo;
+import com.example.FIT_STORE.model.Nutrition;
+import com.example.FIT_STORE.model.UserReg;
+
+@Controller
+public class NutritionController {
+	@Autowired
+	NutritionRepo NR;
+	@RequestMapping("/addNut")
+	public String addNutrition(@RequestParam("mealDate")String date,@RequestParam("mealType")String type,
+			@RequestParam("calories")String calories,@RequestParam("water")String water,
+			@RequestParam("description")String description,ModelMap model)
+	{
+		Nutrition nut = new Nutrition();
+		
+		nut.setDate(date);
+		nut.setMeal(type);
+		nut.setCalories(Integer.parseInt(calories));
+		nut.setWater(Integer.parseInt(water));
+		nut.setMeal_des(description);
+		NR.save(nut);
+		model.put("msg","Nutritions Added Sucessfully!");
+		return "redirect:/nutrition";
+		
+		
+	}
+	@RequestMapping("/viewNut")
+	public String getNutrition(Model model) {
+		List<Nutrition> Nut = NR.findAll();
+		model.addAttribute("nut_item",Nut);
+		return "nutrition";
+		
+		
+	}
+	@GetMapping("/deleteNut")
+	public String deleteClient(@RequestParam int id) {
+	    Nutrition nt = NR.findById(id);
+
+	    if (nt != null) {
+	        NR.delete(nt);
+	    }
+
+	    return "redirect:/nutrition";
+	}
+	
+
+ 
+}

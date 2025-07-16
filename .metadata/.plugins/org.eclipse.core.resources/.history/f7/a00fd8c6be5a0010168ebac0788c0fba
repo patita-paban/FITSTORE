@@ -1,0 +1,49 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FitSore - Fitness Goals</title>
+     <!-- Optional external stylesheet -->
+     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+    
+</head>
+<body>
+ <jsp:include page="header.jsp" />
+    <div class="container">
+        <h1>Set Your Fitness Goals</h1>
+        <form class="goal-form">
+            <label for="goalType">Goal Type</label>
+            <select id="goalType" name="goalType">
+                <option value="weight">Lose Weight</option>
+                <option value="muscle">Gain Muscle</option>
+                <option value="workouts">Workout Frequency</option>
+                <option value="distance">Run Distance</option>
+            </select>
+
+            <label for="goalValue">Target (e.g. 5kg, 10 workouts/week)</label>
+            <input type="text" id="goalValue" name="goalValue" placeholder="Enter your goal value">
+
+            <label for="goalDeadline">Deadline</label>
+            <input type="date" id="goalDeadline" name="goalDeadline">
+
+            <button type="submit">Add Goal</button>
+        </form>
+
+        <div class="goal-list">
+            <h2>Active Goals</h2>
+            
+            <!-- Sample static goal (replace with dynamic rendering if needed) -->
+            <div class="goal-item">
+                <h4>Lose Weight</h4>
+                <p>Target: 5kg by 30-Aug-2025</p>
+            </div>
+
+            <div class="goal-item">
+                <h4>Workout Frequency</h4>
+                <p>Target: 4 sessions/week by 15-Sep-2025</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<jsp:include page="footer.jsp" />

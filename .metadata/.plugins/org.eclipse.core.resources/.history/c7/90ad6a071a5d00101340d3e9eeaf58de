@@ -1,0 +1,112 @@
+package com.example.FIT_STORE.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.example.FIT_STORE.dao.WorkoutRepo;
+import com.example.FIT_STORE.model.Nutrition;
+import com.example.FIT_STORE.model.workout;
+
+@Controller
+public class WorkoutController {
+	@Autowired
+	WorkoutRepo wrepo;
+	@RequestMapping("/addworkout")
+	public String addworkout(@RequestParam("date")String date,@RequestParam("type")String type,
+			@RequestParam("duration")String duration,ModelMap model) 
+	{
+		workout work = new workout();
+		
+		work.setDate(date);
+		work.setType(type);
+		work.setduration(Integer.parseInt(duration));
+		wrepo.save(work);
+		model.put("msg","Workout Added Sucessfully!");
+		return "workouts";
+	}
+	@RequestMapping("/viewworkout")
+	public String getWorkout(Model model) {
+		List<workout> work = wrepo.findAll();	
+		model.addAttribute("item",work);
+		return "redirect:/viewworkout";
+	}
+	@GetMapping("/deleteWork")
+	public String deleteClient(ModelMap model,@RequestParam int id) {
+	    workout wt = wrepo.findById(id);
+
+	    if (wt != null) {
+	        wrepo.delete(wt);
+	        model.put("msg","Workout deleted!");
+	    }
+
+	    return "workouts";
+	}
+	
+	@GetMapping("/editWk")
+	public String editClient(Model model, @RequestParam int id) {
+		workout wo = wrepo.findById(id);
+	    if (wo == null) {
+	        return "workouts";
+	    }
+
+	    workout clientDto = new  workout();
+	    clientDto.setDate(wo.getDate());
+	    clientDto.setType(wo.getType());
+	    clientDto.setduration(wo.getduration());
+	    
+	    
+
+	    model.addAttribute("wo", wo);
+	    model.addAttribute("clientDto", clientDto);
+
+	    return "editWork";
+	}
+	
+	@PostMapping("/editWk")
+	public String editClient(
+	    Model model,
+	    @RequestParam int id,
+	    @Validated @ModelAttribute workout clientDto,
+	    BindingResult result,ModelMap model1
+	) {
+		workout client = wrepo.findById(id);
+	    if (client == null) {
+	        return "workouts";
+	    }
+
+	    model.addAttribute("client", client);
+
+	    if (result.hasErrors()) {
+	        return "editWork";
+	    }
+	    
+	    
+	    client.setDate(clientDto.getDate());
+	    client.setType(clientDto.getType());
+	    client.setduration(clientDto.getduration());
+	    
+	    
+	        
+	        wrepo.save(client);
+	        model1.put("msg","Workout Updated!");
+	    
+
+
+	    return "redirect:/viewworkout";
+	}
+
+
+	
+
+}

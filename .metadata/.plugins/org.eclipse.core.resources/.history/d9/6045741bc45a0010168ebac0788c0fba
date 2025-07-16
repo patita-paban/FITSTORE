@@ -1,0 +1,64 @@
+package com.example.FIT_STORE.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class AdminController {
+	@RequestMapping("/dash")
+	public String dashboard() {
+		return "dashboard";
+	} 
+	@RequestMapping("/workout")
+	public String workout() {
+		return "workouts";
+	} 
+	@RequestMapping("/nut")
+	public String nutrition() {
+		return "nutrition";
+	} 
+	@RequestMapping("/profile")
+	public String profile() {
+		return "profile";
+	} 
+	@RequestMapping("/foot")
+	public String footer() {
+		return "footer";
+	} 
+	@RequestMapping("/head")
+	public String header() {
+		return "header";
+	} 
+	@RequestMapping("/exercise")
+	public String exercise() {
+		return "excercise";
+	} 
+	@RequestMapping("/")
+	public String hero() {
+		return "Herp";
+	} 
+	@RequestMapping("/about")
+	public String about() {
+		return "about";
+	} 
+	@RequestMapping("/contact")
+	public String contact() {
+		return "contact";
+	} 
+	@RequestMapping("/bmi")
+	public String bmi() {
+		return "bmi";
+	} 
+	@RequestMapping("/goals")
+	public String goals() {
+		return "goals";
+	} 
+	@RequestMapping("/playlist")
+	public String playlist() {
+		return "playlist";
+	} 
+	@RequestMapping("/features")
+	public String features() {
+		return "features";
+	} 
+}

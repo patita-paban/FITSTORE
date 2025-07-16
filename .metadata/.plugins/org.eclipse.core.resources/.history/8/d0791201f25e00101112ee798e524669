@@ -1,0 +1,53 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="${pageContext.request.contextPath}/js/login.js" defer></script>
+</head>
+<body>
+<body>
+
+    <section>
+     
+        <form action="logAdmin" method="post">
+        
+            <h1>Login</h1>
+            
+              <h4>${msg }</h4>
+             
+            
+            <div class="inputbox">
+                <ion-icon name="mail-outline"></ion-icon>
+                <input name="uemail" id="name"type="email" required>
+                <label for="">Email</label>
+            </div>
+            <div class="inputbox">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input name="pass" type="password" id="password" required>
+                <label for="">Password</label>
+            </div>
+           
+            <button>Log in</button>
+           
+             <div class="register" align="left">
+                <p><a href="/"><u>Home</u> <i class="fa-solid fa-house"></i></a></p>
+            </div>
+        </form>
+    </section>
+    
+   
+</body>
+</html>
+
+
+
+

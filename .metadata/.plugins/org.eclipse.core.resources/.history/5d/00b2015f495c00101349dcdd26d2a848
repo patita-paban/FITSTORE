@@ -1,0 +1,178 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FitSore | Fitness Goals</title>
+    <style>
+        /* Reset */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to right, #f8f9fa, #e0eafc);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background-color: #16333f;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            hover: #1de9b6;
+        }
+
+        .logo {
+            color: #38fcb4;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 17px;
+        }
+
+        .logout-btn {
+            background-color: #e63946;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #ffffffdd;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            flex-grow: 1;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        .goal-form input, .goal-form select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .goal-form button {
+            width: 100%;
+            padding: 12px;
+            background: #38b000;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .goal-form button:hover {
+            background: #2a8700;
+        }
+
+        .goal-list {
+            margin-top: 30px;
+        }
+
+        .goal-item {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .goal-item h4 {
+            margin: 0;
+            color: #333;
+        }
+
+        .goal-item p {
+            margin: 5px 0 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #16333f;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">FitStore</div>
+        <nav>
+        <a href="dash">Dashboard</a>
+        <a href="viewworkout">Workouts</a>
+        <a href="viewNut">Nutrition</a>
+        <a herf="goals">Goals</a>
+        <a href="bmi">BMI</a>
+        <a href="exercise">Exercises</a>       </nav>
+         <a href="login" class="logout-btn">Logout</a>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Set Your Fitness Goals</h1>
+        <form class="goal-form" method="post" th:object="${clientDto}">
+            <label for="goalType">Date</label>
+            <select id="goalType" name="goalType">
+                <option value="weight">Lose Weight</option>
+                <option value="muscle">Gain Muscle</option>
+                <option value="workouts">Workout Frequency</option>
+                <option value="distance">Run Distance</option>
+            </select>
+            <label for="goalValue">Date</label>
+            <input type="date" id="goalValue" name="goalValue" readonly value="${ntr.date}">
+
+            <label for="goalValue">Meal</label>
+            <input type="text" id="goalValue" name="goalValue" readonly value="${ntr.meal}">
+
+            <label for="goalDeadline">Calories</label>
+            <input type="number" id="goalDeadline" name="goalDeadline" readonly value="${ntr.Calories}">
+
+            <button type="submit">Add Goal</button>
+        </form>
+
+        
+       
+    </div>
+    
+    
+
+    <!-- Footer -->
+    <footer>
+        © 2025 FitStore. All rights reserved.
+    </footer>
+
+</body>
+</html>

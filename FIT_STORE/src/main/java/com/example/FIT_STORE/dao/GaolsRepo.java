@@ -1,0 +1,11 @@
+package com.example.FIT_STORE.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.FIT_STORE.model.Goals;
+
+public interface GaolsRepo extends JpaRepository<Goals, Integer> {
+	Goals findById(int id);
+	
+
+}

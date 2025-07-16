@@ -1,0 +1,214 @@
+@charset "UTF-8";/* styles.css */
+
+/* General Body Styling */
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00d1b2 !important;
+}
+
+.nav-link {
+    color: #ffffff !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #00d1b2 !important;
+}
+
+/* Dashboard Header */
+h2 {
+    font-weight: 600;
+    color: #343a40;
+}
+
+/* Cards */
+.card {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: none;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-weight: bold;
+}
+
+/* Chart Container */
+canvas {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive Padding */
+.container {
+    padding-bottom: 50px;
+}
+
+/* Nutrition Page Specific Styles */
+
+textarea.form-control {
+    resize: none;
+}
+
+.card h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+form .form-label {
+    font-weight: 500;
+}
+
+table {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.card h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Profile Page Styles */
+
+.profile-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #dee2e6;
+}
+
+form .form-label {
+    font-weight: 500;
+}
+/* Footer Styling */
+
+.footer {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+.footer h5,
+.footer h6 {
+    font-weight: 600;
+}
+
+.footer p,
+.footer li {
+    font-size: 0.9rem;
+}
+
+.footer-link {
+    color: #adb5bd;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #00d1b2;
+    text-decoration: underline;
+}
+
+.footer hr {
+    opacity: 0.2;
+}
+
+.footer .text-center {
+    margin-top: 15px;
+}
+/* Exercise Library Styles */
+
+/* Exercise Library UI */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+.exercise-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.exercise-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.exercise-card:hover {
+    transform: translateY(-3px);
+}
+
+.exercise-thumb {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.btn-light.active {
+    background-color: #e0f0ff;
+    color: #007bff;
+    font-weight: 500;
+}
+
+select,
+input[type="text"] {
+    border-radius: 10px;
+}
+
+.small {
+    font-size: 0.85rem;
+}
+ .header-right {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+  .logout-btn {
+    color: #fff;
+    background: #1de9b6;
+    padding: 8px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background: #14b89a;
+}

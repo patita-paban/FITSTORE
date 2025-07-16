@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #f5f5f5, #e5f0ff);
+    color: #222;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+    color: #76ff03;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+ nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+ nav a:hover {
+            color: #76ff03;
+        }
+
+.learn-btn {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 60px;
+    background: url('images/fitness-bg.jpg') no-repeat center center/cover;
+    height: 80vh;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.highlight {
+    color: #6c63ff;
+}
+.highlight1 {
+    color: #f0d214;
+}
+
+.buttons .btn {
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: 15px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.btn.primary {
+    background-color: #6c63ff;
+    color: white;
+}
+
+.btn.secondary {
+    border: 2px solid #6c63ff;
+    color: #6c63ff;
+    background: transparent;
+}
+
+.hero-image img {
+    width: 400px;
+    border-radius: 20px;
+}
+ footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }

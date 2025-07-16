@@ -1,0 +1,145 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Journal - FitStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: #f4f7f8;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1e3d58;
+            color: #fff;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #1e3d58;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .entry {
+            margin-top: 30px;
+        }
+        .entry-item {
+            background: #f1f1f1;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+        .entry-item h3 {
+            margin: 0;
+            color: #333;
+        }
+        .entry-item p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FitStore</h1>
+    <nav>
+        <a href="dashboard.jsp" style="color: white; margin-right: 20px;">Dashboard</a>
+        <a href="workouts.jsp" style="color: white; margin-right: 20px;">Workouts</a>
+        <a href="goals.jsp" style="color: white;">Goals</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Workout Journal</h2>
+    <form id="journalForm">
+        <label for="date">Date</label>
+        <input type="date" id="date" required>
+
+        <label for="type">Workout Type</label>
+        <input type="text" id="type" placeholder="e.g. Chest, Cardio" required>
+
+        <label for="duration">Duration (in minutes)</label>
+        <input type="number" id="duration" required>
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" rows="3" placeholder="Any observations or thoughts?"></textarea>
+
+        <button type="submit">Add Entry</button>
+    </form>
+
+    <div class="entry" id="journalEntries">
+        <h2>Your Entries</h2>
+        <!-- Dynamic entries will appear here -->
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById("journalForm");
+    const journalEntries = document.getElementById("journalEntries");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const date = document.getElementById("date").value;
+        const type = document.getElementById("type").value;
+        const duration = document.getElementById("duration").value;
+        const notes = document.getElementById("notes").value;
+
+        const entryDiv = document.createElement("div");
+        entryDiv.classList.add("entry-item");
+        entryDiv.innerHTML = `
+            <h3>${date} - ${type}</h3>
+            <p><strong>Duration:</strong> ${duration} minutes</p>
+            <p><strong>Notes:</strong> ${notes}</p>
+        `;
+
+        journalEntries.appendChild(entryDiv);
+
+        form.reset();
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+
+<div class="navbar">
+    <div class="logo">FitStore</div>
+    <ul class="nav-links">
+        <li><a href="dash">Dashboard</a></li>
+        <li><a href="viewworkout">Workouts</a></li>
+        <li><a href="viewNut">Nutrition</a></li>
+        <li><a href="proView">Profile</a></li>
+        <li><a href="bmi">BMI</a></li>
+        <li><a href="exercise">Exercises</a></li>
+    </ul>
+    <div class="user-actions">
+        <a href="adminlogin" class="logout-btn">Logout</a>
+    </div>
+</div>
+<link rel="stylesheet" href="css/header.css">

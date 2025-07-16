@@ -1,0 +1,118 @@
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #f0f0f0;
+        }
+         
+
+        .container {
+            max-width: 1000px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .container h1{
+        text-align: center;
+            margin-bottom: 1rem;
+            
+            
+            color: #76ff03;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            
+            
+            color: #76ff03;
+        
+        }
+        .he {
+            margin:0;
+            
+            
+            color: #76ff03;
+        
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .category {
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            background-color: #2a2a2a;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .category:hover {
+            background-color: #3d3d3d;
+        }
+
+        .exercise-card {
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .exercise-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .exercise-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .dropdown-icon {
+            font-size: 1.5rem;
+            transform: rotate(0deg);
+            transition: transform 0.3s;
+        }
+
+        .dropdown-icon.rotate {
+            transform: rotate(180deg);
+        }
+
+        .exercise-details {
+            display: none;
+            margin-top: 1rem;
+        }
+
+        .exercise-details.show {
+            display: block;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin: 0.3rem 0;
+        }
+
+        .label {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1f1f1f;
+            margin-top: 50px;
+            font-size: 14px;
+            color: #aaa;
+        }
+    

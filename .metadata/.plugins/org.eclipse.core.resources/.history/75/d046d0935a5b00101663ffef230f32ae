@@ -1,0 +1,14 @@
+package com.example.FIT_STORE.dao;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.FIT_STORE.model.Nutrition;
+import com.example.FIT_STORE.model.UserReg;
+
+public interface NutritionRepo extends JpaRepository<Nutrition, Integer> {
+	Nutrition findById(int id);
+	Nutrition delete(int id);
+	
+	
+
+}

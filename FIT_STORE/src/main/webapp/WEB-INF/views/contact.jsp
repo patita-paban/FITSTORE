@@ -1,0 +1,139 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us - FitStore</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #0d0d0d;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #00ff99;
+        }
+
+        nav a {
+            color: #ccc;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #00ff99;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .container h2 {
+            font-size: 36px;
+            color: #00ff99;
+            margin-bottom: 20px;
+        }
+
+        .container p {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 153, 0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2b2b2b;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #888;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            background-color: #333;
+        }
+
+        button {
+            background-color: #00ff99;
+            color: #0d0d0d;
+            border: none;
+            padding: 14px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00cc77;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            font-size: 14px;
+            color: #888;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+
+    <h1>FitStore</h1>
+     <nav>
+           <a href="/">Home</a>
+        
+        <a href="about">About</a>
+        <a href="login" class="learn-btn">Join Now</a>
+        </nav>
+</header>
+
+<div class="container">
+    <h2>Contact Us</h2>
+    <p>If you have any questions, feedback, or just want to say hi — we’d love to hear from you!</p>
+
+    <form>
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+<footer>
+    &copy; 2025 FitStore. Designed for fitness lovers.
+</footer>
+
+</body>
+</html>
